@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 
+// TODO allow variable input in templates like { variable.name }
 class Interpolator {
   // enter a string like 'text {variablename} text'
   // delimiters should be given in string or array format in the case of multiple character delimiters
@@ -25,23 +26,23 @@ class Interpolator {
 
   // generate the string given replacements for the placeholders
   generateString(vars) {
-    let res = '';
+    let result = '';
     for (let i = 0; i < this.template.length; i++) {
       let s = this.template[i];
 
       if (i % 2 === 1) { // if odd then is placeholder
         if (s in vars) {
-          res += vars[s];
+          result += vars[s];
         } else {
           // if a variable isnt given in vars
           // concatenate the variable name with delimiters instead
-          res += this.delimiters[0] + s + this.delimiters[1];
+          result += this.delimiters[0] + s + this.delimiters[1];
         }
-      } else { // else is just a part of the string
-        res += s;
+      } else { // else is just regular text
+        result += s;
       }
     }
-    return res;
+    return result;
   }
 }
 
