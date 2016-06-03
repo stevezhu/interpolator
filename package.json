@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevezhu/interpolator.git"
+    "url": "git+https://github.com/stevezhu/string-interpolator.git"
   },
   "author": "Steve Zhu <st.zhu1@gmail.com>",
   "license": "MIT",
